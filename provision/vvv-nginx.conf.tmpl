@@ -1,0 +1,16 @@
+server {
+    listen       80;
+    listen       443 ssl;
+    server_name  {{DOMAINS_HERE}};
+    root         {vvv_path_to_site}/public_html/web;
+
+    error_log    {vvv_path_to_site}/log/error.log;
+    access_log   {vvv_path_to_site}/log/access.log;
+
+    set          $upstream {upstream};
+
+    ssl_certificate /vagrant/certificates/sypcc/dev.crt;
+    ssl_certificate_key /vagrant/certificates/sypcc/dev.key;
+
+    include      /etc/nginx/nginx-wp-common.conf;
+}
