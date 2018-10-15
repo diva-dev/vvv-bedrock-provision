@@ -9,8 +9,8 @@ server {
 
     set          $upstream {upstream};
 
-    ssl_certificate /vagrant/certificates/sypcc/dev.crt;
-    ssl_certificate_key /vagrant/certificates/sypcc/dev.key;
+    {{TLS_CERT}}
+    {{TLS_KEY}}
 
     include      /etc/nginx/nginx-wp-common.conf;
 }
