@@ -24,9 +24,6 @@ touch ${VVV_PATH_TO_SITE}/log/access.logs
 if [[ ! -f "${VVV_PATH_TO_SITE}/public_html/composer.json" ]]; then
     echo "Downloading Bedrock..."
 	composer create-project roots/bedrock public_html
-    cd public_html
-    rm .env
-    
 fi
 
 
