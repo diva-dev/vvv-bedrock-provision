@@ -21,8 +21,10 @@ touch ${VVV_PATH_TO_SITE}/log/error.log
 touch ${VVV_PATH_TO_SITE}/log/access.logs
 
 # Install and configure the latest stable version bedrock
-echo "Downloading Bedrock..."
-composer create-project roots/bedrock public_html
+if [[ ! -f "${VVV_PATH_TO_SITE}/public_html/wp-load.php" ]]; then
+    echo "Downloading Bedrock..."
+    composer create-project roots/bedrock public_html
+fi
 
 
 # Nginx Conf and site location
