@@ -21,9 +21,11 @@ touch ${VVV_PATH_TO_SITE}/log/error.log
 touch ${VVV_PATH_TO_SITE}/log/access.logs
 
 # Install and configure the latest stable version bedrock
-if [[ ! -f "${VVV_PATH_TO_SITE}/public_html/wp-load.php" ]]; then
+if [[ ! -f "${VVV_PATH_TO_SITE}/public_html/composer.json" ]]; then
     echo "Downloading Bedrock..."
-    composer create-project roots/bedrock public_html
+    composer create-project roots/bedrock ${VVV_PATH_TO_SITE}/public_html
+    rm ${VVV_PATH_TO_SITE}/public_html/.env
+    echo $"DB_NAME=${DB_NAME}\nDB_USER=wp\nDB_PASSWORD=wp\n\n# Optional variables" >${VVV_PATH_TO_SITE}/public_html/.env
 fi
 
 
