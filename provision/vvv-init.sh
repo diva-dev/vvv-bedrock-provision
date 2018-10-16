@@ -25,7 +25,7 @@ if [[ ! -f "${VVV_PATH_TO_SITE}/public_html/composer.json" ]]; then
     echo "Downloading Bedrock..."
     composer create-project roots/bedrock ${VVV_PATH_TO_SITE}/public_html
     rm ${VVV_PATH_TO_SITE}/public_html/.env
-    echo $"DB_NAME=${DB_NAME}\nDB_USER=wp\nDB_PASSWORD=wp\n\n# Optional variables\nDB_HOST=localhost\nDB_PREFIX=wp_\n\nWP_ENV=development\nWP_URL=${DOMAIN}\nWP_HOME=http://${WP_URL}\nWP_SITEURL=${WP_HOME}/wp\n\n# Generate your keys here: https://roots.io/salts.html\nAUTH_KEY='generateme'\nSECURE_AUTH_KEY='generateme'\nLOGGED_IN_KEY='generateme'\nNONCE_KEY='generateme'\nAUTH_SALT='generateme'\nSECURE_AUTH_SALT='generateme'\nLOGGED_IN_SALT='generateme'\nNONCE_SALT='generateme'\n\n# Multisite\nMULTISITE_ENABLED=false\nSUBDOMAIN_ENABLED=false\nPATH_CURRENT_SITE=/\n\n# Plugins\nACF_PRO_KEY=\n" >${VVV_PATH_TO_SITE}/public_html/.env
+    printf $"DB_NAME=${DB_NAME}\nDB_USER=wp\nDB_PASSWORD=wp\n\n# Optional variables\nDB_HOST=localhost\nDB_PREFIX=wp_\n\nWP_ENV=development\nWP_URL=${DOMAIN}\nWP_HOME=http://${WP_URL}\nWP_SITEURL=${WP_HOME}/wp\n\n# Generate your keys here: https://roots.io/salts.html\nAUTH_KEY='generateme'\nSECURE_AUTH_KEY='generateme'\nLOGGED_IN_KEY='generateme'\nNONCE_KEY='generateme'\nAUTH_SALT='generateme'\nSECURE_AUTH_SALT='generateme'\nLOGGED_IN_SALT='generateme'\nNONCE_SALT='generateme'\n\n# Multisite\nMULTISITE_ENABLED=false\nSUBDOMAIN_ENABLED=false\nPATH_CURRENT_SITE=/\n\n# Plugins\nACF_PRO_KEY=\n">${VVV_PATH_TO_SITE}/public_html/.env
 fi
 
 
